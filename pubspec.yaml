@@ -1,0 +1,35 @@
+name: e_commerce_app_with_provider
+description: "ShopWave - Modern E-Commerce App"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.8
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  provider: ^6.1.5+1
+  http: ^1.2.1
+  path_provider: ^2.1.2
+  connectivity_plus: ^7.1.1
+  cached_network_image: ^3.4.1
+  sqflite_common_ffi: ^2.4.0+3
+  shared_preferences: ^2.2.2
+  firebase_core: ^4.9.0
+  firebase_auth: ^6.5.1
+  cloud_firestore: ^6.4.1
+
+  sqflite: any
+  path: any
+  # flutter_localizations:
+    # sdk: flutter
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true

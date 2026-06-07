@@ -1,0 +1,236 @@
+import 'package:flutter/material.dart';
+
+class AppLocalizations {
+  final Locale locale;
+
+  AppLocalizations(this.locale);
+
+  static AppLocalizations? of(BuildContext context) {
+    return Localizations.of<AppLocalizations>(context, AppLocalizations);
+  }
+
+  static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
+
+  static final Map<String, Map<String, String>> _localizedValues = {
+    'en': {
+      'app_title': 'ShopWave',
+      'account_settings': 'Account Settings',
+      'my_orders': 'My Orders',
+      'shipping_address': 'Shipping Address',
+      'payment_methods': 'Payment Methods',
+      'notifications': 'Notifications',
+      'my_wishlist': 'My Wishlist',
+      'privacy_security': 'Privacy & Security',
+      'help_support': 'Help & Support',
+      'dark_mode': 'Dark Mode',
+      'language': 'Language',
+      'log_out': 'Log Out',
+      'log_out_title': 'Log Out',
+      'log_out_content': 'Are you sure you want to log out of ShopWave?',
+      'cancel': 'Cancel',
+      'guest_user': 'GUEST USER',
+      'no_orders': 'No orders yet',
+      'start_shopping': 'Start Shopping',
+      'home': 'Home',
+      'order_updates': 'Order Updates',
+      'promotions': 'Promotions & Offers',
+      'new_arrivals': 'New Arrivals',
+      'change_password': 'Change Password',
+      'biometric': 'Biometric Authentication',
+      'delete_account': 'Delete Account',
+      'contact_support': 'Contact Support',
+      'faq': 'FAQ',
+      'terms': 'Terms & Conditions',
+      'english': 'English',
+      'arabic': 'Arabic (العربية)',
+      'add_address': 'Add Address',
+      'address_hint': 'e.g. 123 Main St, City',
+      'save': 'Save',
+      'delete': 'Delete',
+      'add_card': 'Add Card',
+      'card_hint': 'e.g. 4111 1111 2222 3333',
+      'categories': 'Categories',
+      'cart': 'Cart',
+      'profile': 'Profile',
+      'favorites': 'Favorites',
+      'loading_products': 'Loading products...',
+      'no_products': 'No products found',
+      'something_went_wrong': 'Something went wrong. Please try again.',
+      'try_again': 'Try Again',
+      'grand_sale': 'Grand Sale!',
+      'sale_desc': 'Up to 70% off on selected items.\nShop now before it\'s too late!',
+      'shop_now': 'Shop Now',
+      'flash_deals': 'Flash Deals',
+      'exclusive_offers': 'Exclusive offers just for you',
+      'see_all': 'See all →',
+      'trending': 'Trending',
+      'trending_desc': 'Most popular picks right now',
+      'shopping_cart': 'Shopping Cart',
+      'empty_cart_dialog': 'Empty Cart?',
+      'empty_cart_dialog_desc': 'Are you sure you want to remove all items?',
+      'clear_all': 'Clear All',
+      'items': 'items',
+      'subtotal': 'Subtotal',
+      'total': 'Total',
+      'apply_coupon': 'Apply coupon code',
+      'apply': 'Apply',
+      'delivery_time': '3-5 day delivery',
+      'checkout_button': 'Proceed to Checkout',
+      'cart_is_empty': 'Your cart is empty',
+      'add_items_desc': 'Add items to your cart to see them here.',
+      'order_confirmed': 'Order Confirmed!',
+      'thank_you_purchase': 'Thank you for your purchase!',
+      'done': 'Done',
+      'search_categories': 'Search categories...',
+      'all_categories': 'All Categories',
+      'products': 'products',
+      'electronics': 'Electronics',
+      'men\'s clothing': 'Men\'s Clothing',
+      'women\'s clothing': 'Women\'s Clothing',
+      'jewelery': 'Jewelery',
+      'smartphones': 'Smartphones',
+      'watches': 'Watches',
+      'shoes': 'Shoes',
+      'furniture': 'Furniture',
+      'beauty': 'Beauty',
+      'toys': 'Toys',
+      'sports': 'Sports',
+      'groceries': 'Groceries',
+      'accessories': 'Accessories',
+      'gaming': 'Gaming',
+      'link_copied': 'Link copied to clipboard!',
+      'off': 'OFF',
+      'free_shipping': 'Free Shipping',
+      'ending_soon': 'Ending soon',
+      'about_product': 'About this product',
+      'default_product_desc': 'Premium quality product. Crafted with care and precision to give you the best experience. Perfect for everyday use and built to last.',
+      'save_money': 'Save',
+      'added_to_cart': 'added to cart ✓',
+      'add_to_cart_btn': 'Add to Cart',
+    },
+    'ar': {
+      'app_title': 'شوب ويف',
+      'account_settings': 'إعدادات الحساب',
+      'my_orders': 'طلباتي',
+      'shipping_address': 'عنوان الشحن',
+      'payment_methods': 'طرق الدفع',
+      'notifications': 'الإشعارات',
+      'my_wishlist': 'مفضلتي',
+      'privacy_security': 'الخصوصية والأمان',
+      'help_support': 'المساعدة والدعم',
+      'dark_mode': 'الوضع الداكن',
+      'language': 'اللغة',
+      'log_out': 'تسجيل الخروج',
+      'log_out_title': 'تسجيل الخروج',
+      'log_out_content': 'هل أنت متأكد من تسجيل الخروج؟',
+      'cancel': 'إلغاء',
+      'guest_user': 'زائر',
+      'no_orders': 'لا توجد طلبات بعد',
+      'start_shopping': 'ابدأ التسوق',
+      'home': 'المنزل',
+      'order_updates': 'حالة الطلبات',
+      'promotions': 'عروض و خصومات',
+      'new_arrivals': 'وصل حديثاً',
+      'change_password': 'تغيير كلمة المرور',
+      'biometric': 'المصادقة بالبصمة',
+      'delete_account': 'حذف الحساب',
+      'contact_support': 'التواصل مع الدعم',
+      'faq': 'الأسئلة الشائعة',
+      'terms': 'الشروط والأحكام',
+      'english': 'الإنجليزية (English)',
+      'arabic': 'العربية',
+      'add_address': 'إضافة عنوان',
+      'address_hint': 'مثال: حي الرياض، شارع 10',
+      'save': 'حفظ',
+      'delete': 'حذف',
+      'add_card': 'إضافة بطاقة',
+      'card_hint': 'مثال: 4111 1111 2222 3333',
+      'categories': 'الأقسام',
+      'cart': 'السلة',
+      'profile': 'حسابي',
+      'favorites': 'المفضلة',
+      'loading_products': 'جاري تحميل المنتجات...',
+      'no_products': 'لم يتم العثور على منتجات',
+      'something_went_wrong': 'حدث خطأ ما. يرجى المحاولة مرة أخرى.',
+      'try_again': 'المحاولة مرة أخرى',
+      'grand_sale': 'تخفيضات كبرى!',
+      'sale_desc': 'خصم يصل إلى %70 على منتجات مختارة.\nتسوق الآن قبل فوات الأوان!',
+      'shop_now': 'تسوق الآن',
+      'flash_deals': 'عروض سريعة',
+      'exclusive_offers': 'عروض حصرية من أجلك',
+      'see_all': 'عرض الكل ←',
+      'trending': 'الرائجة',
+      'trending_desc': 'المنتجات الأكثر طلباً الآن',
+      'shopping_cart': 'عربة التسوق',
+      'empty_cart_dialog': 'إفراغ السلة؟',
+      'empty_cart_dialog_desc': 'هل أنت متأكد أنك تريد إزالة جميع العناصر؟',
+      'clear_all': 'مسح الكل',
+      'items': 'عناصر',
+      'subtotal': 'المجموع الفرعي',
+      'total': 'الإجمالي',
+      'apply_coupon': 'أدخل كود الخصم',
+      'apply': 'تطبيق',
+      'delivery_time': 'توصيل خلال ٣-٥ أيام',
+      'checkout_button': 'متابعة الدفع',
+      'cart_is_empty': 'عربة التسوق فارغة',
+      'add_items_desc': 'أضف منتجات إلى السلة لرؤيتها هنا.',
+      'order_confirmed': 'تم تأكيد الطلب!',
+      'thank_you_purchase': 'شكراً لتسوقك معنا!',
+      'done': 'تم',
+      'search_categories': 'البحث في الأقسام...',
+      'all_categories': 'كل الأقسام',
+      'products': 'منتجات',
+      'electronics': 'إلكترونيات',
+      'men\'s clothing': 'ملابس رجالية',
+      'women\'s clothing': 'ملابس نسائية',
+      'jewelery': 'مجوهرات',
+      'smartphones': 'هواتف ذكية',
+      'watches': 'ساعات',
+      'shoes': 'أحذية',
+      'furniture': 'أثاث',
+      'beauty': 'تجميل',
+      'toys': 'ألعاب',
+      'sports': 'رياضة',
+      'groceries': 'بقالة',
+      'accessories': 'اكسسوارات',
+      'gaming': 'ألعاب فيديو',
+      'link_copied': 'تم نسخ الرابط!',
+      'off': 'خصم',
+      'free_shipping': 'شحن مجاني',
+      'ending_soon': 'ينتهي قريباً',
+      'about_product': 'نبذة عن المنتج',
+      'default_product_desc': 'منتج عالي الجودة. تم تصنيعه بعناية فائقة لمنحك أفضل تجربة. مثالي للاستخدام اليومي ومصمم ليدوم طويلاً.',
+      'save_money': 'وفر',
+      'added_to_cart': 'تمت الإضافة للسلة ✓',
+      'add_to_cart_btn': 'أضف إلى السلة',
+    },
+  };
+
+  String translate(String key) {
+    return _localizedValues[locale.languageCode]?[key] ?? key;
+  }
+}
+
+class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
+  const _AppLocalizationsDelegate();
+
+  @override
+  bool isSupported(Locale locale) {
+    return ['en', 'ar'].contains(locale.languageCode);
+  }
+
+  @override
+  Future<AppLocalizations> load(Locale locale) async {
+    return AppLocalizations(locale);
+  }
+
+  @override
+  bool shouldReload(_AppLocalizationsDelegate old) => false;
+}
+
+// Extension to make translation easier
+extension LocalizationContext on BuildContext {
+  String tr(String key) {
+    return AppLocalizations.of(this)?.translate(key) ?? key;
+  }
+}

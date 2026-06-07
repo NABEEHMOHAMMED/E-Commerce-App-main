@@ -1,0 +1,11 @@
+{
+  "files.exclude": {
+    "**/.kilo": true
+  },
+  "search.exclude": {
+    "**/.kilo": true
+  },
+  "java.import.exclusions": [
+    "**/.kilo/**"
+  ]
+}
