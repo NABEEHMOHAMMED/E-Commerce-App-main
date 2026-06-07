@@ -66,8 +66,8 @@ class CartProvider extends ChangeNotifier {
     _authSubscription = FirebaseAuth.instance.authStateChanges().listen((user) {
       if (user != null) {
         if (_currentUserId != user.uid) {
-           _currentUserId = user.uid;
-           _loadFromDb();
+          _currentUserId = user.uid;
+          _loadFromDb();
         }
       } else {
         if (_currentUserId != 'guest') {
@@ -86,7 +86,9 @@ class CartProvider extends ChangeNotifier {
     if (existingIndex >= 0) {
       _items[existingIndex].quantity++;
       notifyListeners();
-      await CartDatabaseHelper.instance.update(_items[existingIndex].toDbMap(_currentUserId));
+      await CartDatabaseHelper.instance.update(
+        _items[existingIndex].toDbMap(_currentUserId),
+      );
     } else {
       final newItem = CartItem(product: product);
       _items.add(newItem);
@@ -100,7 +102,9 @@ class CartProvider extends ChangeNotifier {
     if (index >= 0) {
       _items[index].quantity++;
       notifyListeners();
-      await CartDatabaseHelper.instance.update(_items[index].toDbMap(_currentUserId));
+      await CartDatabaseHelper.instance.update(
+        _items[index].toDbMap(_currentUserId),
+      );
     }
   }
 
@@ -110,7 +114,9 @@ class CartProvider extends ChangeNotifier {
       if (_items[index].quantity > 1) {
         _items[index].quantity--;
         notifyListeners();
-        await CartDatabaseHelper.instance.update(_items[index].toDbMap(_currentUserId));
+        await CartDatabaseHelper.instance.update(
+          _items[index].toDbMap(_currentUserId),
+        );
       } else {
         _items.removeAt(index);
         notifyListeners();
@@ -133,7 +139,10 @@ class CartProvider extends ChangeNotifier {
 
   Future<void> _loadFromDb() async {
     try {
-      final data = await CartDatabaseHelper.instance.query('cart_items', _currentUserId);
+      final data = await CartDatabaseHelper.instance.query(
+        'cart_items',
+        _currentUserId,
+      );
       _items = data.map((item) => CartItem.fromDbMap(item)).toList();
       notifyListeners();
     } catch (e) {
