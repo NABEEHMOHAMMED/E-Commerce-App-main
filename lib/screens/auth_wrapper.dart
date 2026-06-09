@@ -14,7 +14,7 @@ class AuthWrapper extends StatelessWidget {
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Scaffold(
-                        body: Container(
+            body: Container(
               width: double.infinity,
               height: double.infinity,
               decoration: const BoxDecoration(
@@ -38,7 +38,9 @@ class AuthWrapper extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                         boxShadow: [
                           BoxShadow(
-                            color: AppTheme.primaryPurple.withValues(alpha: 0.15),
+                            color: AppTheme.primaryPurple.withValues(
+                              alpha: 0.15,
+                            ),
                             blurRadius: 24,
                             offset: const Offset(0, 8),
                           ),
@@ -46,14 +48,18 @@ class AuthWrapper extends StatelessWidget {
                       ),
                       child: const CircularProgressIndicator(
                         strokeWidth: 3,
-                        valueColor: AlwaysStoppedAnimation<Color>(AppTheme.primaryPurple),
+                        valueColor: AlwaysStoppedAnimation<Color>(
+                          AppTheme.primaryPurple,
+                        ),
                       ),
                     ),
                     SizedBox(height: 24),
                     Text(
                       'Connecting securely...',
                       style: TextStyle(
-                        color: (Theme.of(context).brightness == Brightness.dark ? Colors.white : Color(0xFF1A1D2E)),
+                        color: (Theme.of(context).brightness == Brightness.dark
+                            ? Colors.white
+                            : Color(0xFF1A1D2E)),
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                         letterSpacing: 0.5,
@@ -65,12 +71,12 @@ class AuthWrapper extends StatelessWidget {
             ),
           );
         }
-        
+
         // Show home screen if the user is authenticated
         if (snapshot.hasData && snapshot.data != null) {
           return const HomeScreen();
         }
-        
+
         // Otherwise, prompt the user to sign in
         return const SignInScreen();
       },

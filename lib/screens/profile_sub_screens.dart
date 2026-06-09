@@ -11,16 +11,21 @@ class OrdersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(context.tr('my_orders')),
-      ),
+      appBar: AppBar(title: Text(context.tr('my_orders'))),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.shopping_bag_outlined, size: 80, color: Colors.grey.withValues(alpha: 0.5)),
+            Icon(
+              Icons.shopping_bag_outlined,
+              size: 80,
+              color: Colors.grey.withValues(alpha: 0.5),
+            ),
             const SizedBox(height: 16),
-            Text(context.tr('no_orders'), style: const TextStyle(fontSize: 18, color: Colors.grey)),
+            Text(
+              context.tr('no_orders'),
+              style: const TextStyle(fontSize: 18, color: Colors.grey),
+            ),
             const SizedBox(height: 8),
             ElevatedButton(
               onPressed: () => Navigator.pop(context),
@@ -53,7 +58,9 @@ class _ShippingAddressScreenState extends State<ShippingAddressScreen> {
   Future<void> _loadAddresses() async {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
-      _addresses = prefs.getStringList('shipping_addresses') ?? ['123 Main Street, New York, NY 10001'];
+      _addresses =
+          prefs.getStringList('shipping_addresses') ??
+          ['123 Main Street, New York, NY 10001'];
     });
   }
 
@@ -84,7 +91,10 @@ class _ShippingAddressScreenState extends State<ShippingAddressScreen> {
           decoration: InputDecoration(hintText: context.tr('address_hint')),
         ),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(ctx), child: Text(context.tr('cancel'))),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: Text(context.tr('cancel')),
+          ),
           TextButton(
             onPressed: () {
               if (controller.text.trim().isNotEmpty) {
@@ -116,11 +126,15 @@ class _ShippingAddressScreenState extends State<ShippingAddressScreen> {
               itemBuilder: (context, index) {
                 return Card(
                   margin: const EdgeInsets.only(bottom: 12),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
                   child: ListTile(
                     contentPadding: const EdgeInsets.all(16),
                     leading: const CircleAvatar(child: Icon(Icons.home)),
-                    title: Text(context.tr('shipping_address') + ' ${index + 1}'),
+                    title: Text(
+                      context.tr('shipping_address') + ' ${index + 1}',
+                    ),
                     subtitle: Text(_addresses[index]),
                     trailing: IconButton(
                       icon: const Icon(Icons.delete_outline, color: Colors.red),
@@ -186,7 +200,10 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
           decoration: InputDecoration(hintText: context.tr('card_hint')),
         ),
         actions: [
-          TextButton(onPressed: () => Navigator.pop(ctx), child: Text(context.tr('cancel'))),
+          TextButton(
+            onPressed: () => Navigator.pop(ctx),
+            child: Text(context.tr('cancel')),
+          ),
           TextButton(
             onPressed: () {
               if (controller.text.trim().isNotEmpty) {
@@ -218,14 +235,19 @@ class _PaymentMethodsScreenState extends State<PaymentMethodsScreen> {
               itemBuilder: (context, index) {
                 return Card(
                   margin: const EdgeInsets.only(bottom: 12),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(16),
+                  ),
                   child: ListTile(
                     contentPadding: const EdgeInsets.all(16),
                     leading: const Icon(Icons.credit_card, size: 40),
                     title: Text(_cards[index]),
                     subtitle: const Text('Exp: 12/26'),
                     trailing: IconButton(
-                      icon: const Icon(Icons.delete_outline, color: Colors.grey),
+                      icon: const Icon(
+                        Icons.delete_outline,
+                        color: Colors.grey,
+                      ),
                       onPressed: () => _removeCard(index),
                     ),
                   ),
@@ -264,7 +286,11 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
     });
   }
 
-  Future<void> _updateSetting(String key, bool value, Function(bool) updater) async {
+  Future<void> _updateSetting(
+    String key,
+    bool value,
+    Function(bool) updater,
+  ) async {
     final prefs = await SharedPreferences.getInstance();
     await prefs.setBool(key, value);
     setState(() => updater(value));
@@ -280,19 +306,31 @@ class _NotificationsScreenState extends State<NotificationsScreen> {
             title: Text(context.tr('order_updates')),
             subtitle: const Text('Get notified about your order status'),
             value: orderUpdates,
-            onChanged: (val) => _updateSetting('notif_orders', val, (newVal) => orderUpdates = newVal),
+            onChanged: (val) => _updateSetting(
+              'notif_orders',
+              val,
+              (newVal) => orderUpdates = newVal,
+            ),
           ),
           SwitchListTile(
             title: Text(context.tr('promotions')),
             subtitle: const Text('Receive special deals and discounts'),
             value: promotions,
-            onChanged: (val) => _updateSetting('notif_promos', val, (newVal) => promotions = newVal),
+            onChanged: (val) => _updateSetting(
+              'notif_promos',
+              val,
+              (newVal) => promotions = newVal,
+            ),
           ),
           SwitchListTile(
             title: Text(context.tr('new_arrivals')),
             subtitle: const Text('Be the first to know about new products'),
             value: newArrivals,
-            onChanged: (val) => _updateSetting('notif_arrivals', val, (newVal) => newArrivals = newVal),
+            onChanged: (val) => _updateSetting(
+              'notif_arrivals',
+              val,
+              (newVal) => newArrivals = newVal,
+            ),
           ),
         ],
       ),
@@ -323,7 +361,10 @@ class PrivacySecurityScreen extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.delete_forever, color: Colors.red),
-            title: const Text('Delete Account', style: TextStyle(color: Colors.red)),
+            title: const Text(
+              'Delete Account',
+              style: TextStyle(color: Colors.red),
+            ),
             onTap: () {},
           ),
         ],

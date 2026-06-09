@@ -13,7 +13,7 @@ class CategoriesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-            appBar: AppBar(
+      appBar: AppBar(
         backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
         elevation: 0,
         leading: GestureDetector(
@@ -27,12 +27,16 @@ class CategoriesScreen extends StatelessWidget {
           child: Container(
             margin: const EdgeInsets.all(8),
             decoration: BoxDecoration(
-              color: (Theme.of(context).brightness == Brightness.dark ? Color(0xFF1E1E38) : AppTheme.bgLightSurface),
+              color: (Theme.of(context).brightness == Brightness.dark
+                  ? Color(0xFF1E1E38)
+                  : AppTheme.bgLightSurface),
               shape: BoxShape.circle,
             ),
             child: Icon(
               Icons.arrow_back_ios_new_rounded,
-              color: (Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black),
+              color: (Theme.of(context).brightness == Brightness.dark
+                  ? Colors.white
+                  : Colors.black),
               size: 18,
             ),
           ),
@@ -58,7 +62,9 @@ class CategoriesScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 16),
               height: 52,
               decoration: BoxDecoration(
-                color: (Theme.of(context).brightness == Brightness.dark ? Color(0xFF1E1E38) : AppTheme.bgLightSurface),
+                color: (Theme.of(context).brightness == Brightness.dark
+                    ? Color(0xFF1E1E38)
+                    : AppTheme.bgLightSurface),
                 borderRadius: BorderRadius.circular(16),
                 border: Border.all(
                   color: AppTheme.primaryPurple.withValues(alpha: 0.1),
@@ -239,7 +245,9 @@ class _CategoryCard extends StatelessWidget {
     'sports': Color(0xFF00E676),
     'groceries': Color(0xFFFF9F43),
     'accessories': Color(0xFF00CEC9),
-    'gaming': Color(0xFF8C52FF), // Changed from dark 0xFF2C3E50 to bright purple
+    'gaming': Color(
+      0xFF8C52FF,
+    ), // Changed from dark 0xFF2C3E50 to bright purple
   };
 
   @override
@@ -311,7 +319,9 @@ class _CategoryCard extends StatelessWidget {
               child: Text(
                 '${category.productCount} ${context.tr('products')}',
                 style: TextStyle(
-                  color: (Theme.of(context).brightness == Brightness.dark ? color : color.withValues(alpha: 0.8)),
+                  color: (Theme.of(context).brightness == Brightness.dark
+                      ? color
+                      : color.withValues(alpha: 0.8)),
                   fontSize: 8,
                   fontWeight: FontWeight.w500,
                 ),

@@ -90,21 +90,23 @@ class FavoriteProvider extends ChangeNotifier {
         .collection('favorites')
         .snapshots()
         .listen(
-      (snapshot) {
-        _favorites = snapshot.docs.map((doc) {
-          // Map each document back to a Product instance
-          final product = Product.fromDoc(doc);
-          product.isFavorite = true; // Mark as favorite
-          return product;
-        }).toList();
-        
-        notifyListeners();
-        debugPrint('Firestore Favorites updated dynamically. Count: ${_favorites.length}');
-      },
-      onError: (error) {
-        debugPrint('Error listening to favorites stream: $error');
-      },
-    );
+          (snapshot) {
+            _favorites = snapshot.docs.map((doc) {
+              // Map each document back to a Product instance
+              final product = Product.fromDoc(doc);
+              product.isFavorite = true; // Mark as favorite
+              return product;
+            }).toList();
+
+            notifyListeners();
+            debugPrint(
+              'Firestore Favorites updated dynamically. Count: ${_favorites.length}',
+            );
+          },
+          onError: (error) {
+            debugPrint('Error listening to favorites stream: $error');
+          },
+        );
   }
 
   /// Unsubscribe and clean up resources

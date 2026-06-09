@@ -24,7 +24,11 @@ class CartItemWidget extends StatelessWidget {
         borderRadius: BorderRadius.circular(16),
         boxShadow: [
           BoxShadow(
-            color: (Theme.of(context).brightness == Brightness.dark ? Colors.white : Colors.black).withValues(alpha: 0.05),
+            color:
+                (Theme.of(context).brightness == Brightness.dark
+                        ? Colors.white
+                        : Colors.black)
+                    .withValues(alpha: 0.05),
             blurRadius: 10,
             offset: const Offset(0, 3),
           ),
@@ -43,12 +47,16 @@ class CartItemWidget extends StatelessWidget {
                 width: 80,
                 height: 80,
                 decoration: BoxDecoration(
-                  color: (Theme.of(context).brightness == Brightness.dark ? Color(0xFF1E1E38) : AppTheme.bgLightSurface),
+                  color: (Theme.of(context).brightness == Brightness.dark
+                      ? Color(0xFF1E1E38)
+                      : AppTheme.bgLightSurface),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Icon(
                   Icons.image_not_supported,
-                  color: (Theme.of(context).brightness == Brightness.dark ? Colors.white54 : Color(0xFF8E92A6)),
+                  color: (Theme.of(context).brightness == Brightness.dark
+                      ? Colors.white54
+                      : Color(0xFF8E92A6)),
                   size: 30,
                 ),
               ),
@@ -64,7 +72,9 @@ class CartItemWidget extends StatelessWidget {
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
-                    color: (Theme.of(context).brightness == Brightness.dark ? Colors.white : Color(0xFF1A1D2E)),
+                    color: (Theme.of(context).brightness == Brightness.dark
+                        ? Colors.white
+                        : Color(0xFF1A1D2E)),
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
                   ),
@@ -120,7 +130,9 @@ class CartItemWidget extends StatelessWidget {
                 Text(
                   '${item.quantity}',
                   style: TextStyle(
-                    color: (Theme.of(context).brightness == Brightness.dark ? Colors.white : Color(0xFF1A1D2E)),
+                    color: (Theme.of(context).brightness == Brightness.dark
+                        ? Colors.white
+                        : Color(0xFF1A1D2E)),
                     fontSize: 14,
                     fontWeight: FontWeight.w700,
                   ),
